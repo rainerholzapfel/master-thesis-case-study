@@ -1,0 +1,24 @@
+ <div class="mail-detail" ng-if="detail">
+   <div class="ref"><span>Betreff</span>{{ detail.ref }}</div>
+   <div class="date"><span>Datum</span>am {{ detail.date | date : 'dd.MM.yyyy' }} um {{ detail.date | date : 'HH:mm' }}</div>
+   <div class="from"><span>Von</span>{{ detail.sender}}</div>
+   <div class="to"><span>An</span>{{ detail.recipient }}</div>
+   <div class="body">{{ detail.body }}</div>
+ </div>
+  
+<form name="mailForm" class="form" ng-if="folder != 'out'">
+  <div class="input">
+    <div class="row" ng-if="!detail">
+      <input type="email" placeholder="An" ng-model="mail.recipient" required />
+    </div>
+    <div class="row" ng-if="!detail">
+      <input type="text" placeholder="Betreff" ng-model="mail.ref" required />
+    </div>
+    <div class="row">
+      <textarea ng-model="mail.body" required></textarea>
+    </div>
+  </div>
+  <div class="buttons">
+    <input type="submit" ng-click="sendMail(mailForm)" value="{{ (detail) ? 'Antworten' : 'Senden' }}"/>
+  </div>
+</form>

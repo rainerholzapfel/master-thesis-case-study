@@ -1,0 +1,21 @@
+<div class="list-header">
+  <a ng-click="updateMails()">Abrufen</a>
+  <input type="text" ng-model="search.$" placeholder="Liste filtern" />
+</div>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th ng-click="predicate = 'ref'; reverse = !reverse">Betreff</th>
+      <th ng-click="predicate = (folder == 'in') ? 'sender' : 'recipient'; reverse = !reverse" style="width:30%;">{{ (folder == 'in') ? 'Von' : 'An' }}</th>
+      <th ng-click="predicate = 'date'; reverse = !reverse" style="width:20%;">Datum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="mail in mails | filter:search:strict | orderBy:predicate:reverse" ng-click="openMail(mail.id)">
+      <td>{{ mail.ref | limitTo : 50 }}{{ (mail.ref.length > 50) ? '..' : '' }}</td>
+      <td>{{ (folder == 'in') ? mail.sender : mail.recipient }}</td>
+      <td>{{ mail.date | date : 'dd.MM.yyyy HH:mm' }}</td>
+    </tr>
+  </tbody>
+</table>

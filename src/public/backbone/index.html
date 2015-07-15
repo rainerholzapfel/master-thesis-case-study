@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>MailMVC</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+  <div class="header">
+    MailMVC <span id="title"></span>
+  </div>
+  
+  <div class="main">
+    <ul class="menu">
+      <li><a href="#mail/in">M</a></li>
+      <li><a href="#contact/all">K</a></li>
+    </ul>
+	<ul class="submenu" id="sub-mail">
+	  <li><a href="#mail/new" >Verfassen</a></li>
+	  <li><a href="#mail/in">Posteingang</a></li>
+	  <li><a href="#mail/out">Postausgang</a></li>
+	</ul>
+	<ul class="submenu" id="sub-contact">
+	  <li><a href="#contact/new">Neuer Kontakt</a></li>
+      <li><a href="#contact/all">Alle Kontake</a></li>
+	</ul>
+    <div id="content" class="content"></div>
+  </div>
+  
+  <div class="footer">
+    <div class="version">MailMVC v0.0.1 // Backbone</div>
+  </div>
+
+<script src="lib/jquery-1.11.2.min.js"></script>
+<script src="lib/jquery-dateFormat.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+
+<script src="js/utils.js"></script>
+<script src="js/models/contactModel.js"></script>
+<script src="js/models/mailModel.js"></script>
+<script src="js/views/contactsView.js"></script>
+<script src="js/views/contactView.js"></script>
+<script src="js/views/mailView.js"></script>
+<script src="js/views/mailsView.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

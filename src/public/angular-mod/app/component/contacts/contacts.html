@@ -1,0 +1,18 @@
+<div class="list-header">
+  <input type="text" ng-model="search.$" placeholder="Liste filtern" />
+</div>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th ng-click="predicate = 'name'; reverse = !reverse">Name</th>
+      <th ng-click="predicate = 'email'; reverse = !reverse">E-Mail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="contact in contacts | filter:search:strict | orderBy:predicate:reverse" ng-click="editContact(contact.id)">
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.email }}</td>
+    </tr>
+  </tbody>
+</table>

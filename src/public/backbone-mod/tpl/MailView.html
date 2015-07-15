@@ -1,0 +1,30 @@
+<% if (this.options.type != 'new') { %>
+<div class="mail-detail">
+  <div class="ref"><span>Betreff</span><%= ref %></div>
+  <div class="date"><span>Datum</span><%= tmpDate %></div>
+  <div class="from"><span>Von</span><%= sender %></div>
+  <div class="to"><span>An</span><%= recipient %></div>
+  <div class="body"><%= body %></div>
+</div>
+<% } %>
+
+<% if (this.options.type != 'out') { %>
+<form id="mail-form" name="mailForm" class="form">
+  <div class="input">
+    <% if (this.options.type == 'new') { %>
+    <div class="row">
+      <input id="form-recipient" class="input-field" type="email" placeholder="An" required />
+    </div>
+    <div class="row">
+      <input id="form-ref" class="input-field" type="text" placeholder="Betreff" required />
+    </div>
+    <% } %>
+    <div class="row">
+      <textarea id="form-body" class="input-field" required></textarea>
+    </div>
+  </div>
+  <div class="buttons">
+    <input type="submit" value="<%= this.options.type == 'new' ? 'Senden' : 'Antworten' %>"/>
+  </div>
+</form>
+<% } %>

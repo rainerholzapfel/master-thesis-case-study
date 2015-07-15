@@ -1,0 +1,18 @@
+<div class="list-header">
+  <a id="fetch">Abrufen</a>
+  <input id="search" type="text" placeholder="Liste filtern" value="<%= this.model.searchTerm %>" />
+</div>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th id="ref">Betreff</th>
+      <th id="<%= this.model.options.folder == 'in' ? 'sender' : 'recipient' %>" style="width:30%;">
+        <%= this.model.options.folder == 'in' ? 'Von' : 'An' %>
+      </th>
+      <th id="date" style="width:20%;">Datum</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

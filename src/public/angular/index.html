@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="mailMVC">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+  <script type="text/javascript" charset="utf-8" src="assets/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/lib/angular/angular-resource.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/lib/angular/angular-route.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/app.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/component/contact/contactController.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/component/contacts/contactsController.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/component/mail/mailController.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/component/mails/mailsController.js"></script>
+  <script type="text/javascript" charset="utf-8" src="app/shared/backendService.js"></script>
+  <title>MailMVC</title>
+</head>
+
+<body>
+
+  <div class="header">
+    MailMVC // {{ title }}
+  </div>
+  
+  <div class="main">
+    <ul class="menu">
+      <li><a href="#/mail/in">M</a></li>
+      <li><a href="#/contact/all">K</a></li>
+    </ul>
+	<ul class="submenu" ng-show="submenu == 'mail'">
+	  <li><a href="#/mail/new" >Verfassen</a></li>
+	  <li><a href="#/mail/in">Posteingang</a></li>
+	  <li><a href="#/mail/out">Postausgang</a></li>
+	</ul>
+	<ul class="submenu" ng-show="submenu == 'contact'">
+	  <li><a href="#/contact/new">Neuer Kontakt</a></li>
+      <li><a href="#/contact/all">Alle Kontake</a></li>
+	</ul>
+    <div ng-view class="content"></div>
+  </div>
+  
+  <div class="footer">
+    <div class="version">MailMVC v0.0.1 // Angular</div>
+  </div>
+  
+</body>
+
+</html>

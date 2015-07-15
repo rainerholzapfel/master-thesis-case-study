@@ -1,0 +1,14 @@
+<form name="contactForm" class="form">
+  <div class="input">
+    <div class="row">
+      <input type="text" placeholder="Name" ng-model="contact.name" required />
+    </div>
+    <div class="row">
+      <input type="email" placeholder="E-Mail" ng-model="contact.email" required />
+    </div>
+  </div>
+  <div class="buttons">
+    <input type="submit" ng-click="saveContact(contactForm)" value="Speichern"/>
+    <input type="submit" ng-if="id" ng-click="deleteContact()" value="Kontakt löschen"/>
+  </div>
+</form>

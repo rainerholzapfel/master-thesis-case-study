@@ -1,0 +1,16 @@
+<form id="mail-form" name="contactForm" class="form">
+  <div class="input">
+    <div class="row">
+      <input id="form-name" class="input-field" type="text" placeholder="Name" value="<%= name %>" required />
+    </div>
+    <div class="row">
+      <input id="form-email" class="input-field" type="email" placeholder="E-Mail" value="<%= email %>" required />
+    </div>
+  </div>
+  <div class="buttons">
+    <input id="submit-save" type="submit" value="Speichern"/>
+    <% if (this.model.id != null) { %>
+    	<input id="submit-delete" type="submit" value="Kontakt löschen"/>
+    <% } %>
+  </div>
+</form>
