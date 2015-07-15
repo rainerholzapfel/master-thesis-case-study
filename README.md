@@ -2,8 +2,8 @@
 Fallbeispiel aus der Diplomarbeit "Eine Methode zur Evaluierung der Qualität von JavaScript-MV*-Frameworks"
 
 Zum Starten des Servers:
-\n$ npm install
-\n$ node server.js
+<br />$ npm install
+<br />$ node server.js
 
-\nAngular: http://localhost:8080/angular
-\nBackbone: http://localhost:8080/backbone
+<br />Angular: http://localhost:8080/angular
+<br />Backbone: http://localhost:8080/backbone
